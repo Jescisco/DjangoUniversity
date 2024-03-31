@@ -1,0 +1,22 @@
+<div class="row mt-3 justify-content-center">
+    <nav>
+        <ul class="pagination">
+            {% if subjects.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="?page=1">First page</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="?page={{ subjects.previous_page_number }}"><<</a>
+              </li>
+            {% endif %}
+            {% if subjects.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ subjects.next_page_number}}">>></a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="?page={{ subjects.paginator.num_pages }}">Last</a>
+              </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
